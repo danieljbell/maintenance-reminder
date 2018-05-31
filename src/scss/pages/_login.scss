@@ -1,0 +1,53 @@
+.page--login {
+    background-image: linear-gradient(rgba(white, 0.9), rgba(white, 0.9)), url(https://www.greenfarmparts.com/v/vspfiles/templates/gfp-test/img/hero--homepage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.page--login .site-logo {
+    display: block;
+    margin: 0 auto 1rem;
+    max-width: 225px;
+}
+
+.page--login h1 {
+    margin: 0;
+}
+
+.page--login h2 {
+    font-weight: normal;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.page--login .box {
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 6px 6px 18px -4px rgba(black, 0.3);
+}
+
+.form--login {
+    margin-top: 2rem;
+    
+    input[type="email"],
+    input[type="password"] {
+        width: calc(100% - 1rem);
+    }
+
+    input[type="submit"] {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.login--no-account {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+}

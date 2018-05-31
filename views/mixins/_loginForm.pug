@@ -1,0 +1,12 @@
+mixin loginForm()
+    form.form--login(action="/login" method="POST")
+        .form-group
+            label(for="email_address") Email Address
+            input(type="email" name="email" id="email_address")
+        .form-group
+            label(for="password") Password
+            input(type="password" name="password" id="password")
+        input.btn-solid--brand(type="submit" value="Login")
+
+    .login--no-account.has-text-centered
+        p <a href="/forgot-password">Forgot your password?</a>

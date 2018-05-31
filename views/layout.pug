@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    title #{title}
+    meta(charset="UTF-8")
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:300,700')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+
+  body(class=`${bodyClass || ''}`)
+    block messages
+        if locals.flashes
+          .flash-messages
+            - const categories = Object.keys(locals.flashes)
+            each category in categories
+              each message in flashes[category]
+                .flash(class=`flash--${category}`)
+                  p.flash__text!= message
+                  button.flash__remove(onClick="this.parentElement.remove()") &times;
+
+    block header
+        header.site-header
+            nav.site-header-navigation
+                a(href="/")
+                    img.site-logo(src='/images/logo.svg' alt="App Logo")
+                ul.site-navigation-links
+                    if user
+                        li
+                            a(href="/equipment") My Equipment
+                        li
+                            a(href="/profile") My Profile
+                        li
+                            a(href="/logout") Logout
+                    else
+                        li
+                            a(href="/register") Register
+                        li
+                            a(href="/login") Login
+              
+    main#content_area
+        block content
+
+    block footer
+        //- footer.site-footer
+        //-     .site-width
+        //-         - today = new Date();
+        //-         p &copy; #{today.getFullYear()} Date RFE

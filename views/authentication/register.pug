@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+
+    .site-width
+        
+        h1 Register
+
+        form.form--register(action="/register" method="POST")
+            .form-group
+                label(for="first_name") First Name
+                input(type="text" name="first_name" id="first_name" required)
+            .form-group
+                label(for="last_name") Last Name
+                input(type="text" name="last_name" id="last_name" required)                    
+            .form-group
+                label(for="email_address") Email Address
+                input(type="email" name="email" id="email_address" required)
+            .form-group
+                label(for="password") Password
+                input(type="password" name="password" id="password" required)
+            .form-group
+                label(for="confirm_password") Confirm Password
+                input(type="password" name="confirm_password" id="confirm_password" required)
+            input.btn-solid--brand(type="submit" value="Create Account")

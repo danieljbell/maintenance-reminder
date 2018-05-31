@@ -1,0 +1,15 @@
+.site-width {
+    width: calc(100% - 2rem);
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.two-third--centered {
+    max-width: calc((100% / 3) * 2);
+    margin: 0 auto;
+}
+
+.one-third--centered {
+    max-width: calc((100% / 3));
+    margin: 0 auto;
+}
