@@ -1,33 +1,23 @@
-doctype html
-html
-  head
-    title #{title}
-    meta(charset="UTF-8")
-    meta(http-equiv="x-ua-compatible" content="ie=edge")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:300,700')
-    link(rel='stylesheet', href='/stylesheets/main.css')
+extends ../layout
 
-  body(class=`${bodyClass || ''}`)
+include ../mixins/_loginForm
 
-    include ../mixins/_loginForm
-    
-    main#content_area
-        .site-width
-            .box.pos-rel
-                a(href="/")
-                    img.site-logo(src="/images/logo.svg", alt="App Logo")
-                h1.has-text-centered Login To Your Account
-                h2.has-text-centered or <a href="/register">create a new account</a>
-                
-                block messages
-                    if locals.flashes
-                      .flash-messages
-                        - const categories = Object.keys(locals.flashes)
-                        each category in categories
-                          each message in flashes[category]
-                            .flash(class=`flash--${category}`)
-                              p.flash__text!= message
-                              button.flash__remove(onClick="this.parentElement.remove()") &times;
-                
-                +loginForm()
+block content
+
+  main#content_area
+    .site-width
+      .box.pos-rel
+        h1.has-text-centered Login To Your Account
+        h2.has-text-centered or <a href="/register">create a new account</a>
+        
+        block messages
+          if locals.flashes
+            .flash-messages
+              - const categories = Object.keys(locals.flashes)
+              each category in categories
+                each message in flashes[category]
+                  .flash(class=`flash--${category}`)
+                    p.flash__text!= message
+                    button.flash__remove(onClick="this.parentElement.remove()") &times;
+        
+        +loginForm()

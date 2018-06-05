@@ -1,0 +1,23 @@
+.flash-messages {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.flash {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 2px 2px 12px rgba(black, 0.1);
+    
+    p {
+        margin: 0;
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        left: -2rem;
+        transform:  translateY(-50%);
+    }
+
+}

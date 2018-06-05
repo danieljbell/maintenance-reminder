@@ -17,6 +17,8 @@ const errorHandlers = require('./handlers/errorHandlers');
 
 const index = require('./routes/index');
 const createAccount = require('./routes/createAccount');
+const equipment = require('./routes/equipment');
+
 
 require('./handlers/passport');
 
@@ -74,6 +76,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', index);
+app.use('/equipment', equipment);
 app.use('/register', createAccount);
 
 // If that above routes didnt work, we 404 them and forward to error handler
